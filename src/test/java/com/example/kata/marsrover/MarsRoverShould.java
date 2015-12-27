@@ -40,6 +40,10 @@ public class MarsRoverShould {
 			this.direction = facing;
 		}
 
+		public Position increaseY(int delta) {
+			return new Position(x, y + delta, direction);
+		}
+
 		@Override
 		public boolean equals (final Object o) {
 			if (this == o) return true;
@@ -62,17 +66,18 @@ public class MarsRoverShould {
 	private static class Rover{
 
 		private int y;
+		private final Position position;
 
 		public Rover (final Position position) {
-
+			this.position = position;
 		}
 
-		public Rover(){
-
+		public Rover() {
+			position = new Position(0, 0, Direction.N);
 		}
 
 		public Position position() {
-			return new Position(0, y, Direction.N);
+			return position.increaseY(y);
 		}
 
 		public void obey(String commands) {
