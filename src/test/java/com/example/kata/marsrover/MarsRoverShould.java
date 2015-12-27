@@ -8,15 +8,6 @@ import static org.hamcrest.Matchers.is;
 public class MarsRoverShould {
 
 	@Test
-	public void move_forward () {
-		Rover rover = new Rover();
-
-		rover.obey("f");
-
-		assertThat(rover.position(), is(position(0, 1, Direction.N)));
-	}
-
-	@Test
 	public void move_forward_twice () {
 		Rover rover = new Rover();
 
