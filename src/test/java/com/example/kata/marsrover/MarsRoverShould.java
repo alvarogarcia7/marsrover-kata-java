@@ -60,12 +60,15 @@ public class MarsRoverShould {
 	}
 
 	private static class Rover{
+
+		private int y;
+
 		public Position position() {
-			return new Position(0, 1, Direction.N);
+			return new Position(0, y, Direction.N);
 		}
 
-		public void obey(String commands){
-
+		public void obey(String commands) {
+			this.y = commands.length();
 		}
 	}
 }
