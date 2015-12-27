@@ -16,6 +16,15 @@ public class MarsRoverShould {
 		assertThat(rover.position(), is(position(0, 1, Direction.N)));
 	}
 
+	@Test
+	public void move_forward_twice () {
+		Rover rover = new Rover();
+
+		rover.obey("ff");
+
+		assertThat(rover.position(), is(position(0, 2, Direction.N)));
+	}
+
 	private static Position position(int x, int y, Direction facing){
 		return new Position(x,y,facing);
 	}
