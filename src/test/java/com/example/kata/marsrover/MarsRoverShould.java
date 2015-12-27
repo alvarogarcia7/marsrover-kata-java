@@ -16,6 +16,15 @@ public class MarsRoverShould {
 		assertThat(rover.position(), is(position(0, 2, Direction.N)));
 	}
 
+	@Test
+	public void have_a_variable_starting_point () {
+		Rover rover = new Rover(position(0,1,Direction.N));
+
+		rover.obey("ff");
+
+		assertThat(rover.position(), is(position(0, 3, Direction.N)));
+	}
+
 	private static Position position(int x, int y, Direction facing){
 		return new Position(x,y,facing);
 	}
@@ -53,6 +62,14 @@ public class MarsRoverShould {
 	private static class Rover{
 
 		private int y;
+
+		public Rover (final Position position) {
+
+		}
+
+		public Rover(){
+
+		}
 
 		public Position position() {
 			return new Position(0, y, Direction.N);
