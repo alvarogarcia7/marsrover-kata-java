@@ -76,12 +76,7 @@ public class Position{
 			}
 		};
 
-		public Location forward () {
-			throw new RuntimeException();
-		}
-
-		;
-
+		public abstract Location forward ();
 	}
 
 	private static class Location {
