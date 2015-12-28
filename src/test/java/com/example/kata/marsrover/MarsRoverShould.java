@@ -77,10 +77,6 @@ public class MarsRoverShould {
 			this.position = position;
 		}
 
-		public Position position() {
-			return position;
-		}
-
 		public void obey(String commands) {
 			position = position.increaseY(commands.length());
 		}
