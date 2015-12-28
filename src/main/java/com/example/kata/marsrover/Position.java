@@ -64,12 +64,12 @@ public class Position{
 			public Location forward () {
 				return new Location(1, 0);
 			}
-		}, W{
+		}, W {
 			@Override
 			public Location forward () {
 				return new Location(-1, 0);
 			}
-		}, S{
+		}, S {
 			@Override
 			public Location forward () {
 				return new Location(0, -1);
