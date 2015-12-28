@@ -65,8 +65,7 @@ public class MarsRoverShould {
 
 	private static class Rover{
 
-		private int y;
-		private final Position position;
+		private Position position;
 
 		public Rover (final Position position) {
 			this.position = position;
@@ -77,11 +76,11 @@ public class MarsRoverShould {
 		}
 
 		public Position position() {
-			return position.increaseY(y);
+			return position;
 		}
 
 		public void obey(String commands) {
-			this.y = commands.length();
+			position = position.increaseY(commands.length());
 		}
 	}
 }
