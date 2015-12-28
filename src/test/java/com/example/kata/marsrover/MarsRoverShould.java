@@ -7,9 +7,11 @@ import static org.hamcrest.Matchers.is;
 
 public class MarsRoverShould {
 
+	public Rover rover;
+
 	@Test
 	public void move_forward_twice () {
-		Rover rover = new Rover(facingNorthAt(0, 0));
+		rover = new Rover(facingNorthAt(0, 0));
 
 		rover.obey("ff");
 
@@ -18,7 +20,7 @@ public class MarsRoverShould {
 
 	@Test
 	public void have_a_variable_starting_point () {
-		Rover rover = new Rover(facingNorthAt(0, 1));
+		rover = new Rover(facingNorthAt(0, 1));
 
 		rover.obey("ff");
 
