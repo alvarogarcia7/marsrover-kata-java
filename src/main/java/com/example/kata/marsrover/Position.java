@@ -3,11 +3,20 @@ package com.example.kata.marsrover;
 public class Position{
 	private final int x;
 	private final int y;
+	private final Location location;
 	private final Direction direction;
 
-	public Position(int x, int y, Direction facing){
+	public Position(int x, int y, Direction facing) {
 		this.x = x;
 		this.y = y;
+		this.location = new Location(x, y);
+		this.direction = facing;
+	}
+
+	public Position (Location location, Direction facing) {
+		this.x = location.x;
+		this.y = location.y;
+		this.location = location;
 		this.direction = facing;
 	}
 
@@ -25,7 +34,7 @@ public class Position{
 	}
 
 	private Position apply(Location location) {
-		return new Position(x + location.x, y + location.y, direction);
+		return new Position(this.location.add(location), direction);
 	}
 
 
@@ -66,6 +75,10 @@ public class Position{
 		public Location (int deltaX, int deltaY){
 			this.x = deltaX;
 			this.y = deltaY;
+		}
+
+		public Location add (Location other) {
+			return new Location(this.x + other.x, this.y + other.y);
 		}
 
 	}
