@@ -20,7 +20,7 @@ public class MarsRoverShould {
 	}
 
 	@Test
-	public void start_facing_another_direction () {
+	public void start_facing_from_the_east () {
 
 		rover = facingEastAt(1, 2);
 
