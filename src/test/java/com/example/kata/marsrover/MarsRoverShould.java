@@ -2,7 +2,10 @@ package com.example.kata.marsrover;
 
 import org.junit.Test;
 
-import static com.example.kata.marsrover.Position.*;
+import static com.example.kata.marsrover.Delta_II.facingEastAt;
+import static com.example.kata.marsrover.Delta_II.facingNorthAt;
+import static com.example.kata.marsrover.Delta_II.facingSouthAt;
+import static com.example.kata.marsrover.Delta_II.facingWestAt;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
@@ -57,25 +60,5 @@ public class MarsRoverShould {
 		rover.obey("ff");
 
 		assertThat(rover, is(facingEastAt(3, 2)));
-	}
-
-	public static Rover facingNorthAt (int x, int y) {
-		return landRoverAt(x, y, Direction.N);
-	}
-
-	public static Rover facingEastAt(int x, int y) {
-		return landRoverAt(x, y, Direction.E);
-	}
-
-	public static Rover facingWestAt (int x, int y) {
-		return landRoverAt(x, y, Direction.W);
-	}
-
-	public static Rover facingSouthAt (int x, int y) {
-		return landRoverAt(x, y, Direction.S);
-	}
-
-	private static Rover landRoverAt(int x, int y, Direction facing){
-		return new Rover(new Position(x, y, facing));
 	}
 }
