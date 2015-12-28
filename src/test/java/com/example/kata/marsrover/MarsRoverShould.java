@@ -9,7 +9,7 @@ public class MarsRoverShould {
 
 	@Test
 	public void move_forward_twice () {
-		Rover rover = new Rover();
+		Rover rover = new Rover(new Position(0,0,Direction.N));
 
 		rover.obey("ff");
 
