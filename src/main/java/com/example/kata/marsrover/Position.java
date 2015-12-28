@@ -13,7 +13,7 @@ public class Position{
 
 	public Position forward() {
 		if (direction == Direction.N) {
-			return new Position(x, y + 1, direction);
+			return apply(direction.forward());
 		}else if (direction == Direction.E) {
 			return new Position(x + 1, y, direction);
 		} else if (direction == Direction.W) {
@@ -22,6 +22,10 @@ public class Position{
 			return new Position(x, y - 1, direction);
 		}
 		throw new RuntimeException(String.format("Cannot find direction: '%s'", direction));
+	}
+
+	private Position apply(Movement movement) {
+		return new Position(x + movement.x, y + movement.y, direction);
 	}
 
 
@@ -50,5 +54,19 @@ public class Position{
 
 	public static enum Direction{
 		N,E,W,S;
+		Movement forward(){
+			return new Movement(0,1);
+		}
+	}
+
+	private static class Movement{
+		private final int x;
+		private final int y;
+
+		public Movement(int deltaX, int deltaY){
+			this.x = deltaX;
+			this.y = deltaY;
+		}
+
 	}
 }
