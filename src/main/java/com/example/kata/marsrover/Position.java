@@ -11,10 +11,6 @@ public class Position{
 		this.direction = facing;
 	}
 
-	public Position increaseY(int delta) {
-		return new Position(x, y + delta, direction);
-	}
-
 	public Position forward() {
 		if (direction == Direction.N) {
 			return new Position(x, y + 1, direction);
