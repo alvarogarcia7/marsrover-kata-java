@@ -24,7 +24,7 @@ public class MarsRoverShould {
 
 		rover.obey("ff");
 
-		assertThat(rover.position(), is(facingNorthAt(0, 3)));
+		assertThat(rover, is(roverFacingNorthAt(0, 3)));
 	}
 
 	public static Rover roverFacingNorthAt(int x, int y) {
