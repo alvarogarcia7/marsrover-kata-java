@@ -62,10 +62,18 @@ public class Position{
 	}
 
 	public static enum Direction{
-		N,E,W,S;
-		Location forward(){
-			return new Location(0,1);
-		}
+		N {
+			@Override
+			public Location forward () {
+				return new Location(0, 1);
+			}
+		},
+		E,W,S;
+
+		public Location forward() {
+			throw new RuntimeException();
+		};
+
 	}
 
 	private static class Location {
