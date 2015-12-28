@@ -13,16 +13,16 @@ public class MarsRoverShould {
 
 		rover.obey("ff");
 
-		assertThat(rover.position(), is(position(0, 2, Direction.N)));
+		assertThat(rover.position(), is(position(0, 2)));
 	}
 
 	@Test
 	public void have_a_variable_starting_point () {
-		Rover rover = new Rover(position(0,1,Direction.N));
+		Rover rover = new Rover(position(0,1));
 
 		rover.obey("ff");
 
-		assertThat(rover.position(), is(position(0, 3, Direction.N)));
+		assertThat(rover.position(), is(position(0, 3)));
 	}
 
 	private static Position position(int x, int y, Direction... facing) {
