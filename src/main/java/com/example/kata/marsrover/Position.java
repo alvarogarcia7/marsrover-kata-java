@@ -21,7 +21,7 @@ public class Position{
 	}
 
 	public Position forward() {
-		if (direction == Direction.N) {
+		if (direction == Direction.N || direction == Direction.E) {
 			return apply(direction.forward());
 		}else if (direction == Direction.E) {
 			return new Position(x + 1, y, direction);
@@ -61,18 +61,25 @@ public class Position{
 				'}';
 	}
 
-	public static enum Direction{
+	public static enum Direction {
 		N {
 			@Override
 			public Location forward () {
 				return new Location(0, 1);
 			}
 		},
-		E,W,S;
+		E {
+			@Override
+			public Location forward () {
+				return new Location(1, 0);
+			}
+		}, W, S;
 
-		public Location forward() {
+		public Location forward () {
 			throw new RuntimeException();
-		};
+		}
+
+		;
 
 	}
 
