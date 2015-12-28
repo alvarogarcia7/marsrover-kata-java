@@ -25,8 +25,8 @@ public class MarsRoverShould {
 		assertThat(rover.position(), is(position(0, 3, Direction.N)));
 	}
 
-	private static Position position(int x, int y, Direction facing){
-		return new Position(x,y,facing);
+	private static Position position(int x, int y, Direction... facing) {
+		return new Position(x, y, Direction.N);
 	}
 
 	private static class Position{
