@@ -30,6 +30,6 @@ public class Position{
 	}
 
 	public enum Direction{
-		N;
+		N,E;
 	}
 }

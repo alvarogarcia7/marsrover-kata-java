@@ -18,7 +18,21 @@ public class MarsRoverShould {
 		assertThat(rover, is(facingNorthAt(2, 2)));
 	}
 
+	@Test
+	public void start_facing_another_direction () {
+
+		rover = facingEastAt(1, 2);
+
+		rover.obey("f");
+
+		assertThat(rover, is(facingEastAt(2, 2)));
+	}
+
 	public static Rover facingNorthAt (int x, int y) {
 		return new Rover(new Position(x, y, Position.Direction.N));
+	}
+
+	public static Rover facingEastAt(int x, int y) {
+		return new Rover(new Position(x, y, Position.Direction.E));
 	}
 }
