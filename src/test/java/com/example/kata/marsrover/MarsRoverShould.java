@@ -11,7 +11,7 @@ public class MarsRoverShould {
 
 	@Test
 	public void obey_multiple_forward_commands () {
-		rover = roverFacingNorthAt(2, 0);
+		rover =  roverFacingNorthAt(2, 0);
 
 		rover.obey("ff");
 
