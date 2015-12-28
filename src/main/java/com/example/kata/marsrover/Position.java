@@ -15,6 +15,15 @@ public class Position{
 		return new Position(x, y + delta, direction);
 	}
 
+	public Position forward() {
+		if (direction == Direction.N) {
+			return new Position(x, y + 1, direction);
+		}else {
+			return new Position(x + 1, y, direction);
+		}
+	}
+
+
 	@Override
 	public boolean equals (final Object o) {
 		if (this == o) return true;

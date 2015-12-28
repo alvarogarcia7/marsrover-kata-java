@@ -9,7 +9,9 @@ public class Rover{
 	}
 
 	public void obey(String commands) {
-		position = position.increaseY(commands.length());
+		for (int i = 0; i < commands.length(); i++) {
+			position = position.forward();
+		}
 	}
 
 	@Override
