@@ -24,8 +24,8 @@ public class Position{
 		throw new RuntimeException(String.format("Cannot find direction: '%s'", direction));
 	}
 
-	private Position apply(Movement movement) {
-		return new Position(x + movement.x, y + movement.y, direction);
+	private Position apply(Location location) {
+		return new Position(x + location.x, y + location.y, direction);
 	}
 
 
@@ -54,16 +54,16 @@ public class Position{
 
 	public static enum Direction{
 		N,E,W,S;
-		Movement forward(){
-			return new Movement(0,1);
+		Location forward(){
+			return new Location(0,1);
 		}
 	}
 
-	private static class Movement{
+	private static class Location {
 		private final int x;
 		private final int y;
 
-		public Movement(int deltaX, int deltaY){
+		public Location (int deltaX, int deltaY){
 			this.x = deltaX;
 			this.y = deltaY;
 		}
