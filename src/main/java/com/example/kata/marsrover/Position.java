@@ -18,6 +18,8 @@ public class Position{
 			return new Position(x + 1, y, direction);
 		} else if (direction == Direction.W) {
 			return new Position(x - 1, y, direction);
+		} else if (direction == Direction.S) {
+			return new Position(x, y - 1, direction);
 		}
 		throw new RuntimeException("Cannot find direction");
 	}
