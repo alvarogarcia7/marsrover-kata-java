@@ -5,7 +5,7 @@ Taken from [Viktor Farcic, Jordi Falguera's blog](http://technologyconversations
 ## Notes
 
   * ``TODO.md`` has the to-dos
-  * on ``thoughts.md`` I write thoughts while develolping
+  * on ``thoughts.md`` I write thoughts while developing
 
 ## Restrictions
 
