@@ -21,7 +21,7 @@ public class Position{
 		} else if (direction == Direction.S) {
 			return new Position(x, y - 1, direction);
 		}
-		throw new RuntimeException("Cannot find direction");
+		throw new RuntimeException(String.format("Cannot find direction: '%s'", direction));
 	}
 
 
