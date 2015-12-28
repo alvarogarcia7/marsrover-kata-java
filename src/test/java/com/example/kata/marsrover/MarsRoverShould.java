@@ -40,6 +40,16 @@ public class MarsRoverShould {
 	}
 
 	@Test
+	public void start_facing_from_the_south() {
+
+		rover = facingSouthAt(2, 3);
+
+		rover.obey("f");
+
+		assertThat(rover, is(facingSouthAt(2, 2)));
+	}
+
+	@Test
 	public void move_twice_from_another_direction () {
 
 		rover = facingEastAt(1, 2);
@@ -59,6 +69,10 @@ public class MarsRoverShould {
 
 	public static Rover facingWestAt (int x, int y) {
 		return landRoverAt(x, y, Direction.W);
+	}
+
+	public static Rover facingSouthAt (int x, int y) {
+		return landRoverAt(x, y, Direction.S);
 	}
 
 	private static Rover landRoverAt(int x, int y, Direction facing){
