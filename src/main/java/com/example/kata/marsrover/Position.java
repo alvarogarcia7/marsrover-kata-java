@@ -14,9 +14,12 @@ public class Position{
 	public Position forward() {
 		if (direction == Direction.N) {
 			return new Position(x, y + 1, direction);
-		}else {
+		}else if (direction == Direction.E) {
 			return new Position(x + 1, y, direction);
+		} else if (direction == Direction.W) {
+			return new Position(x - 1, y, direction);
 		}
+		throw new RuntimeException("Cannot find direction");
 	}
 
 
@@ -35,6 +38,6 @@ public class Position{
 	}
 
 	public static enum Direction{
-		N,E;
+		N,E,W;
 	}
 }
