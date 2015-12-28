@@ -29,10 +29,14 @@ public class MarsRoverShould {
 	}
 
 	public static Rover facingNorthAt (int x, int y) {
-		return new Rover(new Position(x, y, Position.Direction.N));
+		return landRoverAt(x, y, Position.Direction.N);
 	}
 
 	public static Rover facingEastAt(int x, int y) {
 		return new Rover(new Position(x, y, Position.Direction.E));
+	}
+
+	private static Rover landRoverAt(int x, int y, Position.Direction facing){
+		return new Rover(new Position(x, y, facing));
 	}
 }
