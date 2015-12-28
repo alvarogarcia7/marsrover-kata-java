@@ -3,3 +3,4 @@
  can
 * with the removal of the specificity, the method has a more meaningful name
 * sometimes a simple test (problem) has a difficult implementation (solution)
+* explore the English language for terms so you discover your own domain
