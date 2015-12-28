@@ -30,4 +30,11 @@ public class Rover{
 	public int hashCode () {
 		return position != null ? position.hashCode() : 0;
 	}
+
+	@Override
+	public String toString () {
+		return "Rover{" +
+				"position=" + position +
+				'}';
+	}
 }

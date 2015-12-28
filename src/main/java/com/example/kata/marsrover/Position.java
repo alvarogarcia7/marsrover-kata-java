@@ -39,6 +39,15 @@ public class Position{
 		return true;
 	}
 
+	@Override
+	public String toString () {
+		return "{" +
+				"[" + x +
+				"," + y +
+				"], " + direction +
+				'}';
+	}
+
 	public static enum Direction{
 		N,E,W,S;
 	}
