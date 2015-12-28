@@ -21,7 +21,8 @@ public class Position{
 	}
 
 	public Position forward() {
-		if (direction == Direction.N || direction == Direction.E|| direction == Direction.W) {
+		if (direction == Direction.N || direction == Direction.E|| direction == Direction.W|| direction == Direction
+				.S) {
 			return apply(direction.forward());
 		}else if (direction == Direction.E) {
 			return new Position(x + 1, y, direction);
@@ -78,7 +79,12 @@ public class Position{
 			public Location forward () {
 				return new Location(-1, 0);
 			}
-		}, S;
+		}, S{
+			@Override
+			public Location forward () {
+				return new Location(0, -1);
+			}
+		};
 
 		public Location forward () {
 			throw new RuntimeException();
