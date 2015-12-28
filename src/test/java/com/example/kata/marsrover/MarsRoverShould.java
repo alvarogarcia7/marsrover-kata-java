@@ -11,7 +11,7 @@ public class MarsRoverShould {
 
 	@Test
 	public void move_forward_twice () {
-		rover = new Rover(facingNorthAt(0, 0));
+		rover = roverFacingNorthAt(0, 0);
 
 		rover.obey("ff");
 
@@ -25,6 +25,10 @@ public class MarsRoverShould {
 		rover.obey("ff");
 
 		assertThat(rover.position(), is(facingNorthAt(0, 3)));
+	}
+
+	public static Rover roverFacingNorthAt(int x, int y) {
+		return new Rover(facingNorthAt(x, y));
 	}
 
 	private static Position facingNorthAt (int x, int y) {
