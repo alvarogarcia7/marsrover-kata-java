@@ -11,5 +11,5 @@ Taken from [Viktor Farcic, Jordi Falguera's blog](http://technologyconversations
 
   * Limited use of refactoring tools in the IDE
   * Strict TDD
-  * Babysteps
+  * Baby steps
 
