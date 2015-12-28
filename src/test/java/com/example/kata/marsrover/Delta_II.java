@@ -1,5 +1,11 @@
 package com.example.kata.marsrover;
 
+/**
+ * Rover Factory
+ *
+ * See https://en.wikipedia.org/wiki/Mars_Exploration_Rover#History,
+ * https://en.wikipedia.org/wiki/Delta_II
+ */
 public class Delta_II {
 
 	public static Rover facingNorthAt (int x, int y) {
