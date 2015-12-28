@@ -9,23 +9,23 @@ public class MarsRoverShould {
 
 	@Test
 	public void move_forward_twice () {
-		Rover rover = new Rover(position(0,0));
+		Rover rover = new Rover(facingNorthAt(0, 0));
 
 		rover.obey("ff");
 
-		assertThat(rover.position(), is(position(0, 2)));
+		assertThat(rover.position(), is(facingNorthAt(0, 2)));
 	}
 
 	@Test
 	public void have_a_variable_starting_point () {
-		Rover rover = new Rover(position(0,1));
+		Rover rover = new Rover(facingNorthAt(0, 1));
 
 		rover.obey("ff");
 
-		assertThat(rover.position(), is(position(0, 3)));
+		assertThat(rover.position(), is(facingNorthAt(0, 3)));
 	}
 
-	private static Position position(int x, int y, Direction... facing) {
+	private static Position facingNorthAt (int x, int y) {
 		return new Position(x, y, Direction.N);
 	}
 
