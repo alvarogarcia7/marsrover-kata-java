@@ -18,15 +18,6 @@ public class MarsRoverShould {
 		assertThat(rover, is(roverFacingNorthAt(0, 2)));
 	}
 
-	@Test
-	public void have_a_variable_starting_point () {
-		rover = roverFacingNorthAt(0, 1);
-
-		rover.obey("ff");
-
-		assertThat(rover, is(roverFacingNorthAt(0, 3)));
-	}
-
 	public static Rover roverFacingNorthAt(int x, int y) {
 		return new Rover(facingNorthAt(x, y));
 	}
