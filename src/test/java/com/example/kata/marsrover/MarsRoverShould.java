@@ -71,10 +71,6 @@ public class MarsRoverShould {
 			this.position = position;
 		}
 
-		public Rover() {
-			position = new Position(0, 0, Direction.N);
-		}
-
 		public Position position() {
 			return position;
 		}
