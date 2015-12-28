@@ -28,7 +28,6 @@ public class Position{
 		return new Position(this.location.add(location), direction);
 	}
 
-
 	@Override
 	public boolean equals (final Object o) {
 		if (this == o) return true;
@@ -36,18 +35,24 @@ public class Position{
 
 		final Position position = (Position) o;
 
-		if (x != position.x) return false;
-		if (y != position.y) return false;
 		if (direction != position.direction) return false;
+		if (location != null ? !location.equals(position.location) : position.location != null) return false;
 
 		return true;
 	}
 
 	@Override
+	public int hashCode () {
+		int result = location != null ? location.hashCode() : 0;
+		result = 31 * result + (direction != null ? direction.hashCode() : 0);
+		return result;
+	}
+
+	@Override
 	public String toString () {
 		return "{" +
-				"[" + x +
-				"," + y +
+				"[" + location.x +
+				"," + location.y +
 				"], " + direction +
 				'}';
 	}
@@ -92,6 +97,25 @@ public class Position{
 			return new Location(this.x + other.x, this.y + other.y);
 		}
 
+		@Override
+		public boolean equals (final Object o) {
+			if (this == o) return true;
+			if (o == null || getClass() != o.getClass()) return false;
+
+			final Location location = (Location) o;
+
+			if (x != location.x) return false;
+			if (y != location.y) return false;
+
+			return true;
+		}
+
+		@Override
+		public int hashCode () {
+			int result = x;
+			result = 31 * result + y;
+			return result;
+		}
 	}
 
 	private static class LocationIncrease extends Location {
