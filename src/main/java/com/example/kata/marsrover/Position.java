@@ -21,17 +21,7 @@ public class Position{
 	}
 
 	public Position forward() {
-		if (direction == Direction.N || direction == Direction.E|| direction == Direction.W|| direction == Direction
-				.S) {
-			return apply(direction.forward());
-		}else if (direction == Direction.E) {
-			return new Position(x + 1, y, direction);
-		} else if (direction == Direction.W) {
-			return new Position(x - 1, y, direction);
-		} else if (direction == Direction.S) {
-			return new Position(x, y - 1, direction);
-		}
-		throw new RuntimeException(String.format("Cannot find direction: '%s'", direction));
+		return apply(direction.forward());
 	}
 
 	private Position apply(Location location) {
