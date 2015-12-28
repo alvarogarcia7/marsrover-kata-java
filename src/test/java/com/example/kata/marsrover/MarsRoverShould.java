@@ -10,7 +10,7 @@ public class MarsRoverShould {
 	public Rover rover;
 
 	@Test
-	public void move_forward_twice () {
+	public void obey_multiple_forward_commands () {
 		rover = roverFacingNorthAt(0, 0);
 
 		rover.obey("ff");
