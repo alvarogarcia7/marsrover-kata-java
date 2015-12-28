@@ -5,11 +5,10 @@ public class Position{
 	private final Direction direction;
 
 	public Position(int x, int y, Direction facing) {
-		this.location = new Location(x, y);
-		this.direction = facing;
+		this(new Location(x, y), facing);
 	}
 
-	public Position (Location location, Direction facing) {
+	private Position (Location location, Direction facing) {
 		this.location = location;
 		this.direction = facing;
 	}
