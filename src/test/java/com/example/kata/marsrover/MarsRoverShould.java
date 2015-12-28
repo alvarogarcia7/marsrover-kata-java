@@ -2,6 +2,7 @@ package com.example.kata.marsrover;
 
 import org.junit.Test;
 
+import static com.example.kata.marsrover.Position.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
@@ -29,14 +30,14 @@ public class MarsRoverShould {
 	}
 
 	public static Rover facingNorthAt (int x, int y) {
-		return landRoverAt(x, y, Position.Direction.N);
+		return landRoverAt(x, y, Direction.N);
 	}
 
 	public static Rover facingEastAt(int x, int y) {
-		return landRoverAt(x, y, Position.Direction.E);
+		return landRoverAt(x, y, Direction.E);
 	}
 
-	private static Rover landRoverAt(int x, int y, Position.Direction facing){
+	private static Rover landRoverAt(int x, int y, Direction facing){
 		return new Rover(new Position(x, y, facing));
 	}
 }
