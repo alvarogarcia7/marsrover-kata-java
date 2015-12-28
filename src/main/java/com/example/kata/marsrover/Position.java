@@ -55,42 +55,48 @@ public class Position{
 	public static enum Direction {
 		N {
 			@Override
-			public Location forward () {
-				return new Location(0, 1);
+			public LocationIncrease forward () {
+				return new LocationIncrease(0, 1);
 			}
 		},
 		E {
 			@Override
-			public Location forward () {
-				return new Location(1, 0);
+			public LocationIncrease forward () {
+				return new LocationIncrease(1, 0);
 			}
 		}, W {
 			@Override
-			public Location forward () {
-				return new Location(-1, 0);
+			public LocationIncrease forward () {
+				return new LocationIncrease(-1, 0);
 			}
 		}, S {
 			@Override
-			public Location forward () {
-				return new Location(0, -1);
+			public LocationIncrease forward () {
+				return new LocationIncrease(0, -1);
 			}
 		};
 
-		public abstract Location forward ();
+		public abstract LocationIncrease forward ();
 	}
 
 	private static class Location {
 		private final int x;
 		private final int y;
 
-		public Location (int deltaX, int deltaY){
-			this.x = deltaX;
-			this.y = deltaY;
+		public Location (int x, int y){
+			this.x = x;
+			this.y = y;
 		}
 
 		public Location add (Location other) {
 			return new Location(this.x + other.x, this.y + other.y);
 		}
 
+	}
+
+	private static class LocationIncrease extends Location {
+		public LocationIncrease(int x, int y) {
+			super(x,y);
+		}
 	}
 }
