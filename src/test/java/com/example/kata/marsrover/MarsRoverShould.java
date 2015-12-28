@@ -20,7 +20,7 @@ public class MarsRoverShould {
 
 	@Test
 	public void have_a_variable_starting_point () {
-		rover = new Rover(facingNorthAt(0, 1));
+		rover = roverFacingNorthAt(0, 1);
 
 		rover.obey("ff");
 
