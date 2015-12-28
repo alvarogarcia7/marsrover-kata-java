@@ -11,11 +11,11 @@ public class MarsRoverShould {
 
 	@Test
 	public void obey_multiple_forward_commands () {
-		rover = roverFacingNorthAt(0, 0);
+		rover = roverFacingNorthAt(2, 0);
 
 		rover.obey("ff");
 
-		assertThat(rover, is(roverFacingNorthAt(0, 2)));
+		assertThat(rover, is(roverFacingNorthAt(2, 2)));
 	}
 
 	public static Rover roverFacingNorthAt(int x, int y) {
