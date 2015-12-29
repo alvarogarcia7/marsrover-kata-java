@@ -67,18 +67,8 @@ public class Position{
 				return new LocationIncrease(1, 0);
 			}
 		},
-		W {
-			@Override
-			public LocationIncrease forward () {
-				return this.opposite.forward().negated();
-			}
-		},
-		S {
-			@Override
-			public LocationIncrease forward () {
-				return this.opposite.forward().negated();
-			}
-		};
+		W,
+		S;
 
 		protected Direction opposite;
 
@@ -98,7 +88,9 @@ public class Position{
 			}
 		}
 
-		public abstract LocationIncrease forward ();
+		public LocationIncrease forward () {
+			return this.opposite.forward().negated();
+		}
 
 		public LocationIncrease backward () {
 			return this.opposite.forward();
