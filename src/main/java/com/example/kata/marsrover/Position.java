@@ -58,7 +58,7 @@ public class Position{
 		N {
 			@Override
 			public LocationIncrease forward () {
-				return new LocationIncrease(0, 1);
+				return LocationIncrease.axisY;
 			}
 		},
 		E {
@@ -132,6 +132,9 @@ public class Position{
 	}
 
 	private static class LocationIncrease extends Location {
+
+		public static final LocationIncrease axisY = new LocationIncrease(0,1);
+
 		public LocationIncrease(int x, int y) {
 			super(x,y);
 		}
