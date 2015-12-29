@@ -17,6 +17,10 @@ public class Position{
 		return apply(direction.forward());
 	}
 
+	public Position backward() {
+		return apply(direction.backward());
+	}
+
 	private Position apply(Location location) {
 		return new Position(this.location.add(location), direction);
 	}
@@ -75,6 +79,9 @@ public class Position{
 		};
 
 		public abstract LocationIncrease forward ();
+		public LocationIncrease backward() {
+			return S.forward();
+		}
 	}
 
 	private static class Location {

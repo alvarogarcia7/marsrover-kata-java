@@ -10,7 +10,11 @@ public class Rover{
 
 	public void obey(String commands) {
 		for (int i = 0; i < commands.length(); i++) {
-			position = position.forward();
+			if(commands.charAt(i) == 'f') {
+				position = position.forward();
+			} else {
+				position = position.backward();
+			}
 		}
 	}
 
