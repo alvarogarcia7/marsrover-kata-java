@@ -108,6 +108,14 @@ public class Position{
 
 			N.opposite = S;
 			S.opposite = N;
+
+			checkOppositeConfiguration();
+		}
+
+		private static void checkOppositeConfiguration(){
+			for (Direction current : values()) {
+				assert current.opposite.opposite == current;
+			}
 		}
 
 		public abstract LocationIncrease forward ();
