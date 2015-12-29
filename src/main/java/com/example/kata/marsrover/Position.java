@@ -60,21 +60,11 @@ public class Position{
 			public LocationIncrease forward () {
 				return new LocationIncrease(0, 1);
 			}
-
-			@Override
-			public LocationIncrease backward () {
-				return this.opposite.forward();
-			}
 		},
 		E {
 			@Override
 			public LocationIncrease forward () {
 				return new LocationIncrease(1, 0);
-			}
-
-			@Override
-			public LocationIncrease backward () {
-				return this.opposite.forward();
 			}
 		},
 		W {
@@ -82,21 +72,11 @@ public class Position{
 			public LocationIncrease forward () {
 				return new LocationIncrease(-1, 0);
 			}
-
-			@Override
-			public LocationIncrease backward () {
-				return this.opposite.forward();
-			}
 		},
 		S {
 			@Override
 			public LocationIncrease forward () {
 				return new LocationIncrease(0, -1);
-			}
-
-			@Override
-			public LocationIncrease backward () {
-				return this.opposite.forward();
 			}
 		};
 
