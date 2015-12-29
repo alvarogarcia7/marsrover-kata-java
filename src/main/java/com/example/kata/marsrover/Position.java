@@ -70,7 +70,7 @@ public class Position{
 		W {
 			@Override
 			public LocationIncrease forward () {
-				return new LocationIncrease(-1, 0);
+				return this.opposite.forward().negated();
 			}
 		},
 		S {
