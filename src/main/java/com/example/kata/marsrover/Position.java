@@ -84,6 +84,7 @@ public class Position{
 
 		private static void checkOppositeConfiguration(){
 			for (Direction current : values()) {
+				// the opposite of my opposite is me
 				assert current.opposite.opposite == current;
 			}
 		}
