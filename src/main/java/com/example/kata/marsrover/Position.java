@@ -76,7 +76,7 @@ public class Position{
 		S {
 			@Override
 			public LocationIncrease forward () {
-				return new LocationIncrease(0, -1);
+				return this.opposite.forward().negated();
 			}
 		};
 
@@ -106,8 +106,8 @@ public class Position{
 	}
 
 	private static class Location {
-		private final int x;
-		private final int y;
+		protected final int x;
+		protected final int y;
 
 		public Location (int x, int y){
 			this.x = x;
@@ -142,6 +142,10 @@ public class Position{
 	private static class LocationIncrease extends Location {
 		public LocationIncrease(int x, int y) {
 			super(x,y);
+		}
+
+		public LocationIncrease negated(){
+			return new LocationIncrease(-this.x, -this.y);
 		}
 	}
 }
