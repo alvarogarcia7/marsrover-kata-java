@@ -71,6 +71,11 @@ public class Position{
 			public LocationIncrease forward () {
 				return new LocationIncrease(1, 0);
 			}
+
+			@Override
+			public LocationIncrease backward () {
+				return W.forward();
+			}
 		},
 		W {
 			@Override
