@@ -121,7 +121,7 @@ public class Position{
 		public abstract LocationIncrease forward ();
 
 		public LocationIncrease backward () {
-			throw new RuntimeException();
+			return this.opposite.forward();
 		}
 	}
 
