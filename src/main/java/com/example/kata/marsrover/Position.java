@@ -73,13 +73,15 @@ public class Position{
 		protected Direction opposite;
 
 		static {
-			E.opposite = W;
-			W.opposite = E;
-
-			N.opposite = S;
-			S.opposite = N;
+			makeOpposites(N,S);
+			makeOpposites(E,W);
 
 			checkOppositeConfiguration();
+		}
+
+		private static void makeOpposites(Direction a, Direction b){
+			a.opposite = b;
+			b.opposite = a;
 		}
 
 		private static void checkOppositeConfiguration(){
