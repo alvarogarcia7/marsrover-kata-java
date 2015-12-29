@@ -60,6 +60,11 @@ public class Position{
 			public LocationIncrease forward () {
 				return new LocationIncrease(0, 1);
 			}
+
+			@Override
+			public LocationIncrease backward () {
+				return S.forward();
+			}
 		},
 		E {
 			@Override
@@ -78,12 +83,17 @@ public class Position{
 			public LocationIncrease forward () {
 				return new LocationIncrease(0, -1);
 			}
+			
+			@Override
+			public LocationIncrease backward () {
+				return N.forward();
+			}
 		};
 
 		public abstract LocationIncrease forward ();
 
 		public LocationIncrease backward () {
-			return S.forward();
+			throw new RuntimeException();
 		}
 	}
 
