@@ -133,7 +133,7 @@ public class Position{
 
 	private static class LocationIncrease extends Location {
 
-		public static final LocationIncrease axisY = new LocationIncrease(0,1);
+		public static final LocationIncrease axisY = new LocationIncrease(0, 1);
 		public static final LocationIncrease axisX = new LocationIncrease(1, 0);
 
 		public LocationIncrease(int x, int y) {
