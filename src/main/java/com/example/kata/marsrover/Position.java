@@ -74,7 +74,7 @@ public class Position{
 
 			@Override
 			public LocationIncrease backward () {
-				return W.forward();
+				return this.opposite.forward();
 			}
 		},
 		W {
