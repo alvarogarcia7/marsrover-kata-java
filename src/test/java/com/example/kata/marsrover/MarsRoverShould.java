@@ -79,4 +79,13 @@ public class MarsRoverShould {
 
 		assertThat(rover, is(facingSouthAt(2, 2)));
 	}
+
+	@Test
+	public void obey_backwards_command_facing_west() {
+		rover =  facingWestAt(1, 2);
+
+		rover.obey("b");
+
+		assertThat(rover, is(facingWestAt(2, 2)));
+	}
 }
